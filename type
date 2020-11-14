@@ -1,0 +1,198 @@
+完整类型：
+
+
+
+<!DOCTYPE html>
+
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Title</title> 
+    <style> 
+        body{ 
+            position: relative; 
+        } 
+        ul{ 
+            width: 400px; 
+            height: 300px; 
+            border: 1px solid #000; 
+        } 
+        li{ 
+            list-style: none; 
+        } 
+        .pop{ 
+            width: 300px; 
+            height: 200px; 
+            border: 1px solid #000; 
+            background: #eee; 
+            text-align: center; 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            margin-left: -150px; 
+            margin-top: -100px; 
+        } 
+    </style> 
+    <script src="../js/lib/angular.min.js"></script> 
+    <script> 
+        var myapp=angular.module("myapp",[]); 
+        myapp.controller("myCtrl",function($scope){ 
+            $scope.data=["早上花了5元早饭", "中午花了20元午饭","aa"]; 
+            $scope.show=false; 
+            $scope.title=""; 
+            $scope.btn=""; 
+            $scope.add=""; 
+            $scope.search=""; 
+            //添加内容 
+            $scope.addFun=function(){ 
+                var hasLi=false; 
+                if($scope.add.length==0){ 
+                    alert("输入内容不能为空"); 
+                }else{ 
+                    for(var i=0;i<$scope.data.length;i++){ 
+                        if($scope.data[i]==$scope.add){ 
+                            hasLi=true; 
+                            break; 
+                        }else{ 
+                            hasLi=false; 
+                        } 
+                    } 
+                } 
+                if(hasLi==true){ 
+                    $scope.show=true; 
+                    $scope.title="存在"; 
+                    $scope.btn="好吧"; 
+                }else if($scope.add.indexOf("#")!=-1){ 
+                    $scope.show=true; 
+                    $scope.title="输入了敏感字"; 
+                    $scope.btn="很好吗？"; 
+                }else{ 
+                    $scope.data.unshift($scope.add); 
+                    $scope.add=""; 
+                } 
+            }; 
+            //点击好吧删除弹框 
+            $scope.hide=function(){ 
+                $scope.show=false; 
+            }; 
+            //查找内容 
+            $scope.searchFun=function(){ 
+                var sea=false; 
+                for(var i=0;i<$scope.data.length;i++){ 
+                    if($scope.data[i]==$scope.search){ 
+                        sea=true; 
+                        break; 
+                    }else{ 
+                        sea=false; 
+                    } 
+                } 
+                if(sea==true){ 
+                    $scope.show=true; 
+                    $scope.title="搜到"; 
+                    $scope.btn="很好"; 
+                }else{ 
+                    $scope.show=true; 
+                    $scope.title="没搜到"; 
+                    $scope.btn="失望"; 
+                } 
+            } 
+
+
+        }) 
+    </script> 
+</head> 
+<body ng-app="myapp" ng-controller="myCtrl"> 
+<h2>记账本</h2> 
+<ul> 
+    <li ng-repeat="item in data track by $index">{{item}}</li> 
+</ul> 
+<div> 
+    <span>输入框</span><input type="text" ng-model="add"><br/> 
+    <button ng-click="addFun()">记录</button> 
+</div> 
+<div> 
+    <span>搜索框</span><input type="text" ng-model="search"><br/> 
+    <button ng-click="searchFun()">搜索</button> 
+</div> 
+<div class="pop" ng-show="show"> 
+    <p>提示</p> 
+    <p>{{title}}</p> 
+    <button ng-click="hide()">{{btn}}</button> 
+</div> 
+</body> 
+</html>
+
+
+
+局部类型：
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script type="text/javascript" src="../AngularJS/angular.js" ></script>
+<script>
+var haha = 3;
+var app = angular.module("myApp",[]);
+//自定义过滤器
+app.filter("myFilter",function(){
+return function(text){
+//alert("fasd");
+if(text.indexOf("敏感字符")>=0){
+//alert("asdfasdf");
+alert("包含敏感字符")
+return text.replace(/敏感字符/g,"***");
+}
+return text;
+}
+});
+app.controller("myCtrl",function($scope){
+$scope.newRecord = "";
+$scope.selectRecord = "";
+$scope.records = ["早上花了5块钱吃早饭","中午花了20块钱吃早饭"];
+$scope.addRecord = function(){
+if($scope.newRecord == "" || $scope.newRecord == null){
+alert("输入内容为空");
+}else{
+$scope.records.unshift($scope.newRecord);
+
+alert($scope.records[2]);
+}
+};
+var flag = true;
+$scope.selectRecordMethod = function(){
+for(record in $scope.records){
+if($scope.records[record] == $scope.selectRecord){
+alert("已经存在");
+flag = false;
+}
+}
+if(flag){
+alert("不存在");
+}
+}
+/*$scope.myFilter = function(text){
+var reg = /敏感字符/;
+if(reg.test(text)){
+return text.replace(/敏感字符/g,"***");
+}
+}*/
+});
+</script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<center>
+记事本
+<div style="width: 300px; height: 250px; border: 1 solid blue; background-color:#A6E1EC;">
+<p ng-repeat="record in records ">{{record | myFilter }}</p>
+</div><br/>
+输入框：<input type="text" ng-model="newRecord" /><br/>
+<button ng-click="addRecord()">记录</button><br/>
+搜索：<input type="text" ng-model="selectRecord" /><br/>
+<button ng-click="selectRecordMethod()">记录</button>
+</center>
+</body>
+</html>
