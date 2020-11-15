@@ -1,0 +1,66 @@
+var util = require("../../utils/util.js");
+//获取应用实例
+var app = getApp();
+Page({
+  data: {
+    userInfo: {},
+    buttonLoading: false, 
+    book:[],
+    accountTotal:0
+  },
+  onLoad: function () {
+    console.log('onLoad')
+    var that = this;
+ 
+    // 获取记录
+    var tempbook = wx.getStorageSync("book") || [];
+    this.caculateTotal(tempbook);
+    this.setData({
+        book: tempbook
+    });
+ 
+  },
+
+  //账本提交
+  formSubmit:function(e){
+      this.setData({
+        buttonLoading: true
+      });
+ 
+      var that = this;
+      setTimeout(function(){
+          var inDetail = e.detail.value.inputdetail;
+          var inAmount = e.detail.value.inputamount;
+          if(inDetail.toString().length <= 0 || inAmount.toString().length <= 0){
+              console.log("can not empty");
+              that.setData({
+                buttonLoading: false
+              });
+              return false;
+          }
+ 
+          //新增账本
+          var tempbook = wx.getStorageSync("book") || [];
+          tempbook.unshift({detail:inDetail,amount:inAmount});
+          wx.setStorageSync("book",tempbook);
+          that.caculateTotal(tempbook);
+          that.setData({
+              book: tempbook,
+              buttonLoading: false
+          });
+ 
+      },1000);
+  },
+  //删除账本
+  deleteRow: function(e){
+     var that = this;
+     var index = e.target.dataset.indexKey;
+     var tempbook = wx.getStorageSync("book") || [];
+     tempbook.splice(index,1);
+     wx.setStorageSync("book",tempbook);
+     that.caculateTotal(tempbook);
+     that.setData({
+        book: tempbook,
+     });
+  }
+})
