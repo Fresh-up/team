@@ -14,7 +14,16 @@ Page({
   editAddr : function(e){
     console.log(e)
     wx.navigateTo({
-      url:'../edit_addr/edit_addr?addrid='+e.currentTarget.dataset.addrid
+      url:'../edit_addr/edit_addr'
+   
+    })
+  },
+
+  planAddr : function(d){
+    console.log(d)
+    wx.navigateTo({
+      url:'../plan/plan'
+      
     })
   }
 

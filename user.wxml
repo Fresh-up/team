@@ -15,10 +15,10 @@
 
  <view class="user_addr_manage">
     
-    <navigator url="../edit_addr/edit_addr" >【个人信息】</navigator>
+    <navigator url="../edit_addr/edit_addr">【个人信息】</navigator>
     <view class="user_addr_title">【消费计划】</view>
     <view class="user_addr_title">【邀请好友】</view>
-    <navigator ur2="../edit_addr/edit_addr" >【理财方案】</navigator>
+    <navigator url="../plan/plan">【理财方案】</navigator>
     <view class="user_addr_title">【设置】</view>
     <view class="user_addr_title">【支出情况】</view>
     <view class="user_addr_title">【退出登录】</view>

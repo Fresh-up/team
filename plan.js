@@ -6,7 +6,7 @@ var fileData = require('../../utils/data.js')
 Page({
   // 页面初始数据
   data: {
-      colors:['purple','orange','yellow','green','purple'],
+      colors:['purple','orange'],
      
       // nav 初始化
       navTopItems: fileData.getIndexNavData(),

@@ -39,6 +39,11 @@
                 <view class="section_book" bindtap="bookTap" data-aid="{{item.id}}">
                         <text>关注</text>
                 </view>
+
+
+
+                
+
             </view>
             
         </block>
