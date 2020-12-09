@@ -20,19 +20,7 @@ Page({
     that.setData({
       list: that.data.navSectionItems
     })
-  },
-  //标签切换
-  switchTab: function(e) {
-      let id = e.currentTarget.dataset.id,
-      index = parseInt(e.currentTarget.dataset.index)
-      this.curIndex = parseInt(e.currentTarget.dataset.index)
-      console.log(e)
-      var that = this
-      this.setData({
-        curNavId: id,
-        curIndex: index,
-      })
-      
+  
   },
   // 跳转至详情页
   navigateDetail: function(e){

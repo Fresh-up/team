@@ -5,15 +5,6 @@
 <view class="container">
 <scroll-view  scroll-y="true"  class="page-body" bindscrolltolower="loadMore">
   
-  <!--nav-->
-  <view class="nav_top">
-    <block wx:for="{{navTopItems}}" wx:key="item.id">
-      <view class="nav_top_items {{curNavId == item.id ? 'active_'+colors[index] : ''}}" bindtap="switchTab" data-index="{{index}}" data-id="{{item.id}}">
-        <image src="{{item.icon}}" mode="aspectFill"></image>
-        <text>{{item.title}}</text>
-      </view>
-    </block>
-  </view>
   <!--list-->
   <view class="nav_section">
     <view wx:if="{{list[curIndex]}}">
