@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<image src="/images/屋子图标.png" class="img1"></image>
+<view>
+  <navigator class="link" url="/pages/day/day">
+     <view class='ziti'>日报</view>
+</navigator>
+  <navigator class="link" url="/pages/week/week">
+     <view class='ziti'>周报</view>
+</navigator>
+  <navigator class="link" url="/pages/month/month">
+     <view class='ziti'>月报</view>
+</navigator>
+</view>
+

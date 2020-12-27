@@ -1,0 +1,6 @@
+<!--pages/month/month.wxml-->
+<image src="/images/本月收入.png" class="img1"></image>
+<output class="ipt"></output>
+<image src="/images/本月支出.png" class="img1"></image>
+<output class="ipt"></output>
+<image src="/images/未超出.png" class="img2"></image>

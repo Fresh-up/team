@@ -1,0 +1,9 @@
+/**index.wxss**/
+.img1{width:320px;height: 160px;}
+.link{border:2px solid #dddddd;height:60px;background:rgb(89, 158, 214)}
+.ziti{
+  font-size: 20px;      
+  height: 20px;           
+  text-align: center;      
+  line-height: 60px;    
+  }

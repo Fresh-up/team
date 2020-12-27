@@ -1,0 +1,9 @@
+<!--pages/yusuan/yusuan.wxml-->
+<image src="/images/预算.png" class="img1"></image>
+<view class="center"> 
+      <input class="inputView" name="username" placeholder="请输入"/> 
+    </view>
+<image src="/images/白条.png" class="img2"></image>
+<form bindsubmit="onSubmit">
+  <button form-type="submit" class="btn1" plain>确定</button>
+</form>

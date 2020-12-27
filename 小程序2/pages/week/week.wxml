@@ -1,0 +1,6 @@
+<!--pages/week/week.wxml-->
+<image src="/images/本周收入.png" class="img1"></image>
+<output class="ipt"></output>
+<image src="/images/本周支出.png" class="img1"></image>
+<output class="ipt"></output>
+<image src="/images/未超出.png" class="img2"></image>

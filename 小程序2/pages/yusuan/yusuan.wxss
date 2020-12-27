@@ -1,0 +1,19 @@
+/* pages/yusuan/yusuan.wxss */
+.img1{width:320px;height:310px;}
+.img2{width:10px;height:20px;}
+.btn1{background:rgb(18, 116, 196)}
+.inputView{
+  border: 1px solid #abbcbc;
+  background-color: white;
+  border-radius: 10px;
+  width:80%;
+  margin-top: 10px;
+  height: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.center{
+  display: flex;
+  justify-content: center;
+}
