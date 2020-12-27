@@ -1,0 +1,47 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/detail/detail",
+        "pages/book/book",
+        "pages/nobook/nobook",
+        "pages/noth/noth",
+        "pages/edit_addr/edit_addr",
+        "pages/user/user",
+        "pages/plan/plan",
+        "pages/allplan/allplan",
+        "pages/plandetail/plandetail"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#2a82e4",
+        "navigationBarTitleText": "记账本",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#333",
+        "selectedColor": "#2a82e4",
+        "backgroundColor": "#f6f6f7",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/noth/noth",
+                "text": "添加",
+                "iconPath": "images/add1.png",
+                "selectedIconPath": "images/add2.png"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "text": "文件夹",
+                "iconPath": "images/book1.png",
+                "selectedIconPath": "images/book2.png"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "text": "我的",
+                "iconPath": "images/mine1.png",
+                "selectedIconPath": "images/mine2.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap23.json"
+}

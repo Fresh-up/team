@@ -1,0 +1,10 @@
+.container{
+    background:#fff;
+}
+
+.ar_book{
+    font-size: 100rpx;
+    color:#38b337;
+    border-radius: 0rpx;
+    margin:100rpx 0rpx 500rpx;
+}
