@@ -1,44 +1,47 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/logs/logs",
-        "pages/user/user"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#2a82e4",
-        "navigationBarTitleText": "记账本",
-        "navigationBarText": "#fff",
-        "backgroundColor": "#ffffff",
-        "enablePullDownRefresh": true
-    },
-    "tabBar": {
-        "color": "#b7b7b7",
-        "selectedColor": "#2a82e4",
-        "borderStyle": "black",
-        "backgroundColor": "#ffffff",
-        "list": [
-            {
-                "pagePath": "pages/index/index",
-                "iconPath": "image/加号.png",
-                "selectedIconPath": "image/11.png"
-            },
-            {
-                "pagePath": "pages/logs/logs",
-                "iconPath": "image/文件夹.png",
-                "selectedIconPath": "image/21.png"
-            },
-            {
-                "pagePath": "pages/user/user",
-                "iconPath": "image/人.png",
-                "selectedIconPath": "image/31.png"
-            }
-        ]
-    },
-    "networkTimeout": {
-        "request": 10000,
-        "downloadFile": 10000
-    },
-    "debug": true,
-    "sitemapLocation": "sitemap77.json"
+  "pages": [
+    "pages/index/index",
+    "pages/settings/settings",
+    "pages/handbook/index/index", 
+    "pages/detail/detail",
+    "pages/book/book",
+    "pages/nobook/nobook",
+    "pages/handbook/detail/detail",
+    "pages/handbook/statistics/statistics",
+    "pages/handbook/sublist/sublist",
+    "pages/edit_addr/edit_addr",
+    "pages/user/user",
+    "pages/plan/plan",
+    "pages/allplan/allplan",
+    "pages/plandetail/plandetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0094ff",
+    "navigationBarTitleText": "随手记账本",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "requst": 20000,
+    "cnnectSocket": 20000,
+    "upladFile": 20000,
+    "downloadFile": 20000
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/common/icon/home1.png",
+        "selectedIconPath": "pages/common/icon/home2.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "pages/common/icon/mine1.png",
+        "selectedIconPath": "pages/common/icon/mine2.png"
+      }
+    ]
+  }
 }
